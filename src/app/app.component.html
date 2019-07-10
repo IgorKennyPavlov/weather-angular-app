@@ -1,11 +1,18 @@
 <h1>Hot Weather Widget</h1>
 <div class="element">
   <div class="element-left">
-    <app-places></app-places>
+    <app-places
+    [states]="states"
+    [places]="places"
+    [pickedState]="pickedState"
+    [pickedPlace]="pickedPlace"
+    (statePicked)="setState($event)"
+    (placePicked)="setPlace($event)">
+    </app-places>
   </div>
   <div class="element-right">
-    <app-weather></app-weather>
-    <app-twitter></app-twitter>
+    <app-weather [weather]="pickedPlace?.weather"></app-weather>
+    <app-twitter [socialInfo]="pickedPlace?.social_info"></app-twitter>
   </div>
 </div>
 <div class="copyright">

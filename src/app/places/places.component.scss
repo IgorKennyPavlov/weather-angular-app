@@ -6,7 +6,7 @@ img {
   border-radius: 6px 6px 0px 0px;
 }
 
-.ele-strip {
+.state-panel {
   background: #fda660;
   padding: 1em 1em;
   margin: -3px 0px 0px 0px;
@@ -15,13 +15,16 @@ img {
     li {
       display: inline-block;
       padding: 0em 0.5em;
-
+      font-size: 1em;
+      color: #fff;
+      cursor: pointer;
       &:not(:last-child) {
         border-right: 1px solid #fff;
       }
-      a {
-        font-size: 1em;
-        color: #fff;
+
+      &:hover {
+        background-color: #fff;
+        color: #fda660;
       }
     }
   }
@@ -50,6 +53,10 @@ span.line {
     &-row {
       text-align: left;
       margin-bottom: 1em;
+      cursor: pointer;
+      &:hover {
+        background-color: #ccc;
+      }
     }
 
     &-img {
@@ -124,7 +131,7 @@ span.line {
 }
 
 @media (max-width: 1440px) {
-  .ele-strip ul li {
+  .state-panel ul li {
     padding: 0em 0.4em;
   }
 }
@@ -137,7 +144,7 @@ span.line {
   }
 }
 @media (max-width: 320px) {
-  .ele-strip ul li a {
+  .state-panel ul li a {
     font-size: 0.9em;
   }
   .activity-desc {
