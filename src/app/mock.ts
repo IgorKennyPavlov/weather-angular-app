@@ -62,7 +62,7 @@ const places: IPlace[] = [
         "state": "California"
     },
     {
-        "img": "assets/images/2.jpeg",
+        "img": "assets/images/missouri/1.jpeg",
         "address": "739 Rogers Avenue, Springville, Missouri, 2732",
         "phone": 386401256300,
         "weather": {
