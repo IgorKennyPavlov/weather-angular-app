@@ -62,7 +62,7 @@ const places: IPlace[] = [
         "state": "California"
     },
     {
-        "img": "assets/images/missouri/1.jpeg",
+        "img": "assets/images/2.jpeg",
         "address": "739 Rogers Avenue, Springville, Missouri, 2732",
         "phone": 386401256300,
         "weather": {
@@ -73,7 +73,7 @@ const places: IPlace[] = [
         },
         "social_info": {
             "title": "Spherix Bleendot",
-            "img": "assets/images/missouri/1.jpeg",
+            "img": "assets/images/missouri/2.jpeg",
             "followers": 505,
             "following": 110
         },
