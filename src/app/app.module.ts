@@ -6,6 +6,7 @@ import { PlacesComponent } from './places/places.component';
 import { WeatherComponent } from './weather/weather.component';
 import { TwitterComponent } from './twitter/twitter.component';
 import { FilterPipe } from './filter.pipe';
+import { WeatherDataService } from './weather-data.service';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,7 @@ import { FilterPipe } from './filter.pipe';
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [WeatherDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

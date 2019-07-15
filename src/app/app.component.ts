@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { places$, IPlace } from './mock';
-import { Observable } from 'rxjs';
+import { IPlace } from './mock';
+import { WeatherDataService } from './weather-data.service';
 
 @Component({
   selector: 'app-root',
@@ -8,11 +8,12 @@ import { Observable } from 'rxjs';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  private places$: Observable<IPlace[]> = places$;
   public places: IPlace[];
   public states: string[];
   public pickedState: string;
   public pickedPlace: IPlace;
+
+  constructor(private weatherService: WeatherDataService) { };
 
   public setState(stateName: string) {
     this.pickedState = stateName;
@@ -22,13 +23,13 @@ export class AppComponent implements OnInit {
   }
 
   public ngOnInit() {
-    this.places$.subscribe((places: IPlace[]) => {
+    this.weatherService.getPlaces().subscribe((places: IPlace[]) => {
       this.places = places;
       this.pickedPlace = this.places[0];
 
       this.states = this.places
         .map((place: IPlace) => place.state)
-        .reduce((acc: string[], cur: string, i, arr) => {
+        .reduce((acc: string[], cur: string) => {
           if (!~acc.indexOf(cur)) {
             acc.push(cur);
           }
